@@ -1,43 +1,41 @@
 package je;
 import java.util.*;
-class school2 {
+class schools {
     String studName;
     int grade;
-    float GPA;
-    school2(String studname,int grade,float GPA){
+    float gpa;
+    schools(String studname,int grade,float gpa){
         this.studName = studname;
         this.grade = grade;
-        this.GPA = GPA;
+        this.gpa = gpa;
     }
-    void updateGPA(){
-        float newGPA;
+    void updategpa(){
+        float newgpa;
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter new GPA");
-        newGPA = sc.nextFloat();
-        this.GPA = newGPA;
+        newgpa = sc.nextFloat();
+        this.gpa = newgpa;
     }
     String displayDetails(){
-        return this.studName+" has a "+this.GPA+" GPA";
+        return this.studName+" has a "+this.gpa+" GPA";
     }
 }
 public class school{
     public static void main(String[] args) {
         String studName;
         int grade;
-        float GPA;
+        float gpa;
         Scanner obj = new Scanner(System.in);
         System.out.println("Enter Student details:");
         studName = obj.nextLine();
         grade = obj.nextInt();
-        GPA = obj.nextFloat();
-        school2 sh = new school2(studName,grade,GPA);
+        gpa = obj.nextFloat();
+        schools sh = new schools(studName,grade,gpa);
         System.out.println("Do you want to update GPA? (y/n)");
         char ch = obj.next().charAt(0);
         if(Character.toLowerCase(ch)=='y'){
-            sh.updateGPA();
+            sh.updategpa();
         }
         System.out.println(sh.displayDetails());
-
-
     }
 }
