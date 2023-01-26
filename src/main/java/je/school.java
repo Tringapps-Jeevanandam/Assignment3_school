@@ -1,10 +1,10 @@
 package je;
 import java.util.*;
-class schoolS {
+class SCHOOLS {
     String studName;
     int grade;
     float gpa;
-    schoolS(String studname,int grade,float gpa){
+    SCHOOLS(String studname,int grade,float gpa){
         this.studName = studname;
         this.grade = grade;
         this.gpa = gpa;
@@ -20,7 +20,7 @@ class schoolS {
         return this.studName+" has a "+this.gpa+" GPA";
     }
 }
-public class school{
+ class SCHOOL{
     public static void main(String[] args) {
         String studName;
         int grade;
@@ -30,7 +30,7 @@ public class school{
         studName = obj.nextLine();
         grade = obj.nextInt();
         gpa = obj.nextFloat();
-        schoolS sh = new schoolS(studName,grade,gpa);
+        SCHOOLS sh = new SCHOOLS(studName,grade,gpa);
         System.out.println("Do you want to update GPA? (y/n)");
         char ch = obj.next().charAt(0);
         if(Character.toLowerCase(ch)=='y'){
