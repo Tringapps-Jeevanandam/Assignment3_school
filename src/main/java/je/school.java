@@ -32,8 +32,11 @@ class SCHOOLS {
         float gpa;
         Scanner obj = new Scanner(System.in);
         Log.info("Enter Student details:");
+        Log.info("Student Name");
         studName = obj.nextLine();
+        Log.info("Grade");
         grade = obj.nextInt();
+        Log.info("GPA");
         gpa = obj.nextFloat();
         SCHOOLS sh = new SCHOOLS(studName,grade,gpa);
         Log.info("Do you want to update GPA? (y/n)");
@@ -41,6 +44,7 @@ class SCHOOLS {
         if(Character.toLowerCase(ch)=='y'){
             sh.updategpa();
         }
+        if(true)
         Log.info(sh.displayDetails());
         obj.close();
     }
