@@ -31,6 +31,7 @@ class SCHOOLS {
         int grade;
         float gpa;
         Scanner obj = new Scanner(System.in);
+        try{
         Log.info("Enter Student details:");
         Log.info("Student Name");
         studName = obj.nextLine();
@@ -47,5 +48,10 @@ class SCHOOLS {
         String displaydetails = sh.displayDetails();
         Log.info(displaydetails);
         obj.close();
+    }
+    catch(Exception e){
+        String exp = "Exception:"+e;
+        Log.info(exp);
+    }
     }
 }
