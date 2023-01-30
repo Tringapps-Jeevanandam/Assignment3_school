@@ -1,6 +1,9 @@
 package je;
 import java.util.*;
+import java.util.logging.Logger;
 class SCHOOLS {
+    public static final Logger Log = Logger.getLogger("InfoLogging");
+
     String studName;
     int grade;
     float gpa;
@@ -12,30 +15,33 @@ class SCHOOLS {
     void updategpa(){
         float newgpa;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter new GPA");
+        Log.info("Enter new GPA");
         newgpa = sc.nextFloat();
         this.gpa = newgpa;
+        sc.close();
     }
     String displayDetails(){
         return this.studName+" has a "+this.gpa+" GPA";
     }
 }
  class SCHOOL{
+    public static final Logger Log = Logger.getLogger("InfoLogging");
     public static void main(String[] args) {
         String studName;
         int grade;
         float gpa;
         Scanner obj = new Scanner(System.in);
-        System.out.println("Enter Student details:");
+        Log.info("Enter Student details:");
         studName = obj.nextLine();
         grade = obj.nextInt();
         gpa = obj.nextFloat();
         SCHOOLS sh = new SCHOOLS(studName,grade,gpa);
-        System.out.println("Do you want to update GPA? (y/n)");
+        Log.info("Do you want to update GPA? (y/n)");
         char ch = obj.next().charAt(0);
         if(Character.toLowerCase(ch)=='y'){
             sh.updategpa();
         }
-        System.out.println(sh.displayDetails());
+        Log.info(sh.displayDetails());
+        obj.close();
     }
 }
