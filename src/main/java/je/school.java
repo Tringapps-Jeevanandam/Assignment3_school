@@ -43,12 +43,9 @@ class SCHOOLS {
         char ch = obj.next().charAt(0);
         if(Character.toLowerCase(ch)=='y'){
             sh.updategpa();
-            Log.info(sh.displayDetails());
         }
-        else{
-        Log.info(sh.displayDetails());
-
-        }
-                obj.close();
+        String displaydetails = sh.displayDetails();
+        Log.info(displaydetails);
+        obj.close();
     }
 }
